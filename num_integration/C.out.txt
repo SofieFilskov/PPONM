@@ -1,0 +1,29 @@
+1/(x*x+1) integrated from -1 to 1
+Calculated: 1.5708
+Exact value: 1.5708
+Need to satisfy 4.38235e-09 < 2.5708e-06
+Integrand evaluated 344 times
+
+
+With CC 1/(x*x+1) integrated from -1 to 1
+Calculated: 1.5708
+Exact value: 1.5708
+Need to satisfy 4.32227e-09 < 2.5708e-06
+Integrand evaluated 584 times
+
+
+x*sin(2*exp(2*sin(2*exp(2*x)))) integrated from -1 to 1
+Calculated: 0.336733
+Exact value: 0.336733
+Need to satisfy 1.59874e-07 < 1.33673e-06
+Integrand evaluated 4720 times
+
+
+With CC x*sin(2*exp(2*sin(2*exp(2*x)))) integrated from -1 to 1
+Calculated: 0.336733
+Exact value: 0.336733
+Need to satisfy 4.46016e-07 < 1.33673e-06
+Integrand evaluated 4740 times
+
+
+No visible improvements with CC

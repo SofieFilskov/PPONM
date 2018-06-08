@@ -1,0 +1,19 @@
+set terminal svg enhanced background rgb 'white'
+set xlabel "x"
+set ylabel "y(x) = x*x"
+set key left
+
+set output "cubic.svg"
+plot "cubic.out.txt" index 0 using 1:2 with points title 'Data', \
+  "cubic.out.txt" index 1 using 1:2 with lines title 'My spline', \
+  "cubic.out.txt" index 2 using 1:2 with lines title 'GSL spline'
+
+set output "cubicinteg.svg"
+plot "cubic.out.txt" index 0 using 1:3 with points title 'Data', \
+  "cubic.out.txt" index 1 using 1:3 with lines title 'My spline', \
+  "cubic.out.txt" index 2 using 1:3 with lines title 'GSL spline'
+
+set output "cubicderiv.svg"
+plot "cubic.out.txt" index 0 using 1:4 with points title 'Data', \
+  "cubic.out.txt" index 1 using 1:4 with lines title 'My spline', \
+  "cubic.out.txt" index 2 using 1:4 with lines title 'GSL spline'

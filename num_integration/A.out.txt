@@ -1,0 +1,23 @@
+Sqrt(x) integrated from 0 to 1
+Calculated: 0.666667
+Exact value: 0.666667
+Need to satisfy 1.30186e-08 < 1.66667e-06
+
+
+1/sqrt(x) integrated from 0 to 1
+Calculated: 2
+Exact value: 2
+Need to satisfy 1.05084e-09 < 1.66667e-06
+
+
+ln(x)/sqrt(x) integrated from 0 to 1
+Calculated: -4
+Exact value: -4
+Need to satisfy 5.86947e-10 < 5e-06
+
+
+4*sqrt(1-(1-x^2)) integrated from 0 to 1
+Calculated: 3.14159
+Exact value: 3.14159
+Need to satisfy 2.00728e-13 < 4.14159e-10
+Integrand evaluated 25748 times

@@ -1,0 +1,24 @@
+exp(x^2) integrated from -infty to infty
+Calculated: 1.77242
+Exact value: 1.77245
+Need to satisfy 2.97194e-05 < 0.000277242
+Integrand evaluated 176 times
+
+
+exp(x^2) integrated from 1 to infty
+Calculated: 0.139398
+Exact value: 0.139403
+Need to satisfy 4.76973e-06 < 0.00011394
+Integrand evaluated 40 times
+
+
+exp(x^2) integrated from -infty to 1
+Calculated: 1.63305
+Exact value: 1.63305
+Need to satisfy 2.6549e-06 < 0.000263305
+Integrand evaluated 144 times
+
+
+With GSL integration from -infty to infty exp(-x^2) = 1.77245
+With GSL integration from 1 to infty exp(-x^2) = 0.139403
+With GSL integration from -infty to 1 exp(-x^2) = 1.63305

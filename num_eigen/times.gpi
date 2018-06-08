@@ -1,0 +1,11 @@
+set terminal svg enhanced background rgb 'white'
+set xlabel "Size of matrix, n"
+set ylabel "Diagonalization time"
+set key left
+f(x)=b+(x/a)**3
+b=0.1
+a=10
+fit f(x) "times.txt" via b,a
+T = sprintf("Fit with %1.1f+(n/%3.1f)^3",b,a)
+set output "times.svg"
+plot "times.txt" with points title 'Times', f(x) with lines title T
