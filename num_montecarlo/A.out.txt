@@ -1,0 +1,16 @@
+1/qrt(x) integrated from 0 to 1
+Calculated to 2.02831 with error 0.0496883
+Exact value: 2
+Real error: 0.0283139
+
+
+2D gauss integrated from 0 to 1
+Calculated to 3.10901 with error 0.039229
+Exact value: 3.14159
+Real error: 0.0325791
+
+
+Long function integrated from 0 to pi
+Calculated to 1.42774 with error 0.0411114
+Exact value: 1.3932
+Real error: 0.0345348

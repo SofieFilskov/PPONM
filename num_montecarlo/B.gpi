@@ -1,0 +1,11 @@
+set terminal svg enhanced background rgb 'white'
+set xlabel "x"
+set ylabel "y"
+set key right
+set output "B.svg"
+
+set logscale xy
+
+plot "B.out.txt" using 1:3 with lines title "Monte Carlo error", \
+      "B.out.txt" using 1:4 with lines title "Real error", \
+      "B.out.txt" using 1:2 with points title "1/sqrt(N)",
