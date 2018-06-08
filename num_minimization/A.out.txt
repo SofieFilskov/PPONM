@@ -1,0 +1,15 @@
+Rosenbrock function:
+Starting x = [16, 12]
+f(x) = 5.95382e+06
+Ending x = [1, 1]
+f(x) = 1.11715e-14
+df(x) = [3.36372e-06, -1.61358e-06]
+steps: 65
+
+Himmelblau function:
+Starting x = [16, 12]
+f(x) = 89458
+x = [3, 2]
+f(x) = 4.35638e-15
+df(x) = [7.90504e-07, 1.26076e-07]
+steps: 8

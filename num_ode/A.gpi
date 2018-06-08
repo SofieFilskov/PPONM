@@ -1,0 +1,7 @@
+set terminal svg enhanced background rgb 'white'
+set xlabel "x"
+set ylabel "y"
+set key right
+
+set output "function.svg"
+plot "A.out.txt" index 2 with points title 'f(x) = x^2 - 5x +7',

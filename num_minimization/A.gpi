@@ -1,0 +1,7 @@
+set terminal svg enhanced background rgb 'white'
+set key left
+
+set output "A.svg"
+set xlabel "x"
+set ylabel "f(x)"
+plot "A.out.txt" index 1 using 1:2 with lines title 'Roenbrock function'

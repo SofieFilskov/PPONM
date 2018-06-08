@@ -1,0 +1,8 @@
+set terminal svg enhanced background rgb 'white'
+set xlabel "Time"
+set ylabel "Activity"
+set key right
+
+set output "B.svg"
+plot "B.out.txt" index 1 with errorbars title 'Data',\
+    "B.out.txt" index 3 with lines title 'Fit'

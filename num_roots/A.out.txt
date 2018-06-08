@@ -1,0 +1,59 @@
+The first function:
+Newton done in 26 steps
+x =
+1.09914e-05
+9.08919
+f(x) = (should be 0)
+-0.000968135
+1.88832e-06
+# of functioncalls = 105 
+
+Rosenbrock function:
+Newton done in 28 steps
+x=
+0.99997
+0.999939
+f(x)=  (should be 0)
+0.000476059
+-0.000267958
+# of functioncalls = 129 
+
+Himmelblau's function:
+Newton done in 15 steps
+x=
+2.99999
+2.00002
+f(x)=  (should be 0)
+-0.000327605
+0.000596009
+# of functioncalls = 61 
+
+First function with jacobian:
+Newton with jacobian done in 26 steps
+x =
+1.09914e-05
+9.08919
+f(x) = (should be 0)
+-0.000968135
+1.88834e-06
+# of functioncalls = 53 
+
+Rosenbrock function with jacobian:
+Newton with jacobian done in 28 steps
+x=
+0.99997
+0.999939
+f(x)=  (should be 0)
+0.000476044
+-0.000267816
+# of functioncalls = 73 
+
+Himmelblau's function with jacobian:
+Newton with jacobian done in 15 steps
+x=
+2.99999
+2.00002
+f(x)=  (should be 0)
+-0.000327599
+0.000596001
+# of functioncalls = 31 
