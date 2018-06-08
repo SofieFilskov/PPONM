@@ -1,0 +1,7 @@
+set terminal pslatex
+set key left
+set xlabel "x"
+set ylabel "erf(x)"
+
+set out 'plot.tex'
+plot  "data.out.txt" with lines title 'Error function'

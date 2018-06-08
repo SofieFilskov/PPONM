@@ -1,0 +1,9 @@
+set terminal svg enhanced background rgb 'white'
+set output "odiff.svg"
+set xlabel "x"
+set ylabel "y(x)"
+set key left
+
+
+plot "odiff.out.txt" index 0 with lines title 'dydx(x) = y(x)*(1-y(x))', \
+  "odiff.out.txt" index 1 with points title '1/(1+exp(-x))'

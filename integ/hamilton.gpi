@@ -1,0 +1,6 @@
+set terminal svg enhanced background rgb 'white'
+set output "hamilton.svg"
+set xlabel "alpha"
+set ylabel "E(alpha)"
+
+plot  "hamilton.out.txt" with line ls 1 notitle

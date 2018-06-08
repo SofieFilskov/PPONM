@@ -1,0 +1,43 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+%%\usepackage{graphicx}
+
+\title{Finding the cubic root}
+\author{Sofie Filskov Hermansen}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\section{Introduction}
+The aim of this report is to implement a function that calculates the cubic root of a real positive number $x$. This is found by solving the equation
+\begin{align}
+c^3-x = 0.
+\end{align}
+
+We have earlier used the Multidimensional Root-Finding routine from GSL to find the root of a multidimensional problem, but as this problem is only one dimensional, we instead use the One Dimensional Root-Finding routine. This can be found in the header file \textit{gsl\_roots.h}.
+
+\section{Solving the problem}
+First the function is defined. For this, \textit{gsl\_function} is used, which only takes the parameter $x$ and the value to solve $c$ and returns the function $c^3-x = 0$. 
+
+The type is set to \textit{gsl\_root\_fsolver\_brent} and we initialize the solver state for this algorithm. We use root bracketing, where we give a bounded region, as these algorithms are guaranteed to converge, whereas root polishing (where you give an initial guess) only converge if the initial guess is close enough to the true value of a root.
+The bounded region must contain a root, så we start with the bounded region going from $0$ to $x$. The size of the bounded region is then reduced, iteratively, until it encloses the root to a desired tolerance. 
+
+The solver state is updated via an iteration and tested for convergence. If the solver state has not converged, it is again updated via an iteration and so forth.
+
+The function has converged when the condition
+\begin{align}
+|a-b| < epsabs + epsrel \text{min}(|a|,|b|)
+\end{align}
+is achieved, where $a$ and $b$ are the high and lower boundary, respectively, $epsabs$ is the absolute error and $epsrel$ is the relative error.
+
+In figure \ref{my_figure} one can see how the guess on the cubic root comes closer to the true value with every iteration, until it is close enough to have converged. The figure shows the calculation for $x = 100$, and it is clear that the first guess is at half of this, 50. 
+
+\begin{figure}
+	\input{plot.tex}
+	\caption{A plot of the guess on the root versus iterations. Here, the parameter $x = 100$ and the cubic root is calculated to $c = 4.6415888$.}
+	\label{my_figure}
+\end{figure}
+
+\end{document}

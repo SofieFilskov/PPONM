@@ -1,0 +1,8 @@
+set terminal pslatex
+set key right
+set xlabel "Iteration"
+set ylabel "Root"
+
+set out 'plot.tex'
+plot  "out.txt" using 1:2 with lines title 'Cubic root finding',\
+      "out.txt" using 1:3 with lines title 'Expected value'

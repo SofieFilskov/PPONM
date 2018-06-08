@@ -1,0 +1,6 @@
+set terminal svg enhanced background rgb 'white'
+set key left
+
+set out 'hydro.svg'
+plot  "hydro.out.txt" using 1:2 with line ls 1 title 'Using ode',\
+      "hydro.out.txt" using 1:3 with line ls 2 title 'Exact result'

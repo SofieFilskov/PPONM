@@ -1,0 +1,14 @@
+set terminal svg enhanced background rgb 'white'
+set key left
+
+set out 'plot_circ.svg'
+plot "orbit.out.txt" index 0 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+  title 'Newtonian circular motion'
+
+set out 'plot_ellip.svg'
+plot "orbit.out.txt" index 1 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+  title 'Newtonian elliptical motion'
+
+set out 'plot_rela.svg'
+plot "orbit.out.txt" index 2 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+  title 'Relativistic elliptical motion'

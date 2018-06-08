@@ -1,0 +1,4 @@
+set terminal svg enhanced background rgb 'white'
+set output "plot.svg"
+plot 	"io.out.txt" with points title 'Cosinus', \
+	"cmd.out.txt" with points title 'Sinus'

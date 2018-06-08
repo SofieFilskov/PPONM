@@ -1,0 +1,8 @@
+set terminal svg enhanced background rgb 'white'
+set key left
+set xlabel "Time"
+set ylabel "Activity"
+
+set out 'radio.svg'
+plot  "radio.out.txt" using 1:2 with lines title 'Least Square fit',\
+      "data" with errorbars title 'Data points'

@@ -1,0 +1,7 @@
+set terminal svg enhanced background rgb 'white'
+set key left
+set xlabel "Iterations"
+
+set out 'rosen.svg'
+plot  "rosen.out.txt" using 3:1 with line ls 1 title 'x',\
+      "rosen.out.txt" using 3:2 with line ls 2 title 'y'

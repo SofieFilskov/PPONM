@@ -1,0 +1,8 @@
+set terminal svg enhanced background rgb 'white'
+set output "airy.svg"
+set xlabel "x"
+set ylabel "y"
+set key left
+
+plot  "airy_data.txt" using 1:2 with line ls 1 title 'Ai(x)', \
+      "airy_data.txt" using 1:3 with line ls 2 title 'Bi(x)'
