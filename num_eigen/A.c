@@ -7,7 +7,7 @@
 #define RND (double)rand()/RAND_MAX
 
 void print_matrix(gsl_matrix * A);
-int jacobi(gsl_matrix* A, gsl_vector* e, gsl_matrix* V);
+int jacobi(gsl_matrix* A, gsl_vector* e, gsl_matrix* V, int* rot);
 
 int main(int argc, char const *argv[]) {
   int n;
@@ -21,7 +21,7 @@ int main(int argc, char const *argv[]) {
   gsl_matrix* A = gsl_matrix_alloc (n,n);
   gsl_matrix* A_copy = gsl_matrix_alloc (n,n);
 
-  for (int i = 0; i<n;i++){
+  for (int i = 0; i<n; i++){
     for (int j = 0; j<n; j++){
       double random = RND;
       gsl_matrix_set (A, i, j, random);
@@ -35,7 +35,8 @@ int main(int argc, char const *argv[]) {
   gsl_matrix* V = gsl_matrix_alloc (n,n);
   gsl_vector* e = gsl_vector_alloc(n);
 
-  int sweeps = jacobi(A_copy, e, V);
+  int rot = 0;
+  int sweeps = jacobi(A_copy, e, V, &rot);
 
   printf("Orthogonal matrix V with eigenvectors:\n");
   print_matrix(V);
@@ -43,7 +44,7 @@ int main(int argc, char const *argv[]) {
   printf("Vector e with eigenvalues:\n");
   gsl_vector_fprintf(stdout, e, "%g");
 
-  printf("\nSweeps is equal %i\n\n", sweeps);
+  printf("\nSweeps: %i, rotations: %i\n\n", sweeps, rot);
 
   gsl_matrix* D1 = gsl_matrix_alloc (n,n);
   gsl_matrix* D2 = gsl_matrix_alloc (n,n);
@@ -60,6 +61,9 @@ int main(int argc, char const *argv[]) {
 
   printf("The matrix VTAV = D is calculated to:\n");
   print_matrix(D2);
+
+  printf("The diagonalization time as a function of size of matrix can be\
+  seen in figure times.svg\n");
 
   gsl_matrix_free(A);
   gsl_matrix_free(V);

@@ -2,7 +2,7 @@
 #include<gsl/gsl_matrix.h>
 #include<gsl/gsl_vector.h>
 
-int jacobi(gsl_matrix* A, gsl_vector* e, gsl_matrix* V){
+int jacobi(gsl_matrix* A, gsl_vector* e, gsl_matrix* V, int* rot){
 	int changed, sweeps = 0, n=A->size1;
 	for(int i = 0; i < n; i++){
 		gsl_vector_set(e, i, gsl_matrix_get(A, i, i));
@@ -12,6 +12,7 @@ int jacobi(gsl_matrix* A, gsl_vector* e, gsl_matrix* V){
 		changed = 0; sweeps++; int p,q;
 		for (p=0; p<n; p++){
 			for (q = p+1; q<n; q++){
+				*rot += 1;
 				double app = gsl_vector_get(e,p);
 				double aqq = gsl_vector_get(e,q);
 				double apq = gsl_matrix_get(A, p, q);

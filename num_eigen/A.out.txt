@@ -19,7 +19,7 @@ Vector e with eigenvalues:
 0.54335
 2.4096
 
-Sweeps is equal 5
+Sweeps: 5, rotations: 50
 
 The matrix VTAV = D is calculated to:
 -1.0144 0 0 0 0 
@@ -28,3 +28,4 @@ The matrix VTAV = D is calculated to:
 0 0 0 0.54335 0 
 0 0 0 0 2.4096 
 
+The diagonalization time as a function of size of matrix can be  seen in figure times.svg

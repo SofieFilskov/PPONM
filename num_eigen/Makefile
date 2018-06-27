@@ -17,7 +17,7 @@ A.out.txt: A
 A: A.c print_matrix.c jacobi.c
 B.out.txt: B
 	./$< > $@
-B: B.c print_matrix.c jacobi_cyclic.c
+B: B.c print_matrix.c jacobi_B.c jacobi.c
 
 
 
