@@ -19,6 +19,7 @@ void qr_gs_decomp(gsl_matrix* A, gsl_matrix* R) {
   }
 }
 
+
 void backsub (gsl_matrix* R, gsl_matrix* Q, gsl_vector* x, gsl_vector* b){
   gsl_blas_dgemv(CblasTrans, 1.0, Q, b, 0.0, x);
   for (int i = x->size-1; i >= 0; i--){
@@ -29,6 +30,7 @@ void backsub (gsl_matrix* R, gsl_matrix* Q, gsl_vector* x, gsl_vector* b){
     gsl_vector_set(x, i, s/gsl_matrix_get(R, i, i));
   }
 }
+
 
 void inverse(gsl_matrix* A, gsl_matrix* B){
   int n = A->size1;

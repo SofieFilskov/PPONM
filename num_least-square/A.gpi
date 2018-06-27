@@ -9,8 +9,3 @@ plot "A.out.txt" index 0 with errorbars title 'Data', \
   "A.out.txt" index 1 using 1:3 with lines title 'Best fit - Delta c', \
   "A.out.txt" index 1 using 1:4 with lines title 'Best fit + Delta c'
 
-set output "B.svg"
-plot "B.out.txt" index 0 with errorbars title 'Data', \
-  "B.out.txt" index 1 using 1:2 with lines title 'Best fit', \
-  "B.out.txt" index 1 using 1:3 with lines title 'Best fit - Delta c', \
-  "B.out.txt" index 1 using 1:4 with lines title 'Best fit + Delta c',

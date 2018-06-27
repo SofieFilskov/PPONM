@@ -4,8 +4,6 @@
 #include <gsl/gsl_vector.h>
 #include <math.h>
 
-#define RND (double)rand()/RAND_MAX
-
 void print_matrix(gsl_matrix * A);
 void qr_gs_decomp(gsl_matrix * A, gsl_matrix * R);
 void backsub(gsl_matrix* R, gsl_matrix* Q, gsl_vector* x, gsl_vector* b);
@@ -42,7 +40,7 @@ int main() {
   }
 
   gsl_vector* b = gsl_vector_alloc(n);
-  for (int i = 0; i < m; i++) {
+  for (int i = 0; i < n; i++) {
     gsl_vector_set(b, i, y[i]/dy[i]);
   }
 
