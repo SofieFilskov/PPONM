@@ -77,7 +77,7 @@ int main(int argc, char const *argv[]) {
   steps = newton(himmel, x, 1e-5);
   f = himmel(x, df, H);
 
-  printf("x = [%g, %g]\n", gsl_vector_get(x,0), gsl_vector_get(x,1));
+  printf("Ending x = [%g, %g]\n", gsl_vector_get(x,0), gsl_vector_get(x,1));
   printf("f(x) = %g\n", f);
   printf("df(x) = [%g, %g]\n", gsl_vector_get(df,0), gsl_vector_get(df,1));
   printf("steps: %i\n", steps);

@@ -114,6 +114,8 @@ int main(int argc, char const *argv[]) {
   gsl_vector_free(x);
   gsl_vector_free(df);
 
+  printf("From the root exercise we get that it takes 28 and 15 steps\n");
+
   /*    Radioactivity   */
   printf("\n\n");
 
