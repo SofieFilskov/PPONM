@@ -3,7 +3,7 @@ LDLIBS = $$(gsl-config --libs)
 
 .PHONEY: all clean
 
-all: A.out.txt
+all: sinus.svg function.svg
 
 sinus.svg function.svg: A.gpi A.out.txt
 	gnuplot $<
@@ -14,4 +14,4 @@ A: A.c ode.c
 
 
 clean:
-	rm -f A *out.txt
+	rm -f A *out.txt *.svg

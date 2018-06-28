@@ -2,6 +2,8 @@
 #include <gsl/gsl_vector.h>
 #include <math.h>
 
+typedef struct filename {char name[30];} fname;
+
 void rkstep12(
 	double t,                                  /* the current value of the variable */
 	double h,                                  /* the step to be taken */
@@ -51,8 +53,9 @@ int driver(
   	double t, double h, gsl_vector* yt,
   	void f(double t, gsl_vector* y, gsl_vector* dydt),
   	gsl_vector* yth, gsl_vector* err),
-	void f(double t, gsl_vector* y, gsl_vector* dydt) /* right-hand-side */
-) {
+	void f(double t, gsl_vector* y, gsl_vector* dydt), /* right-hand-side */
+	fname * info){
+
   int i, k = 0;
   int n = yt->size;
   double normy, loc_err, tau;
@@ -61,6 +64,9 @@ int driver(
   double hint = *h; /*h_internal*/
   gsl_vector* yth = gsl_vector_alloc(n);
   gsl_vector* err = gsl_vector_alloc(n);
+
+	FILE * file;
+	file = fopen(info -> name, "w");
 
   while(x < b){
     if (x+hint > b) {
@@ -76,8 +82,9 @@ int driver(
       x = x + hint;
       gsl_vector_memcpy(yt, yth);
 
-      printf("%g %g %g\n",x, gsl_vector_get(yth, 0), gsl_vector_get(yth, 1));
-      
+
+      fprintf(file, "%g %g %g\n",x, gsl_vector_get(yth, 0), gsl_vector_get(yth, 1));
+
     }
     if (loc_err > 0) {
       hint *= pow(tau/loc_err, 0.25)*0.95;
@@ -86,6 +93,7 @@ int driver(
       hint *= 2.0;
     }
   }
+	fclose(file);
   *h = hint;
 
   gsl_vector_free(yth);

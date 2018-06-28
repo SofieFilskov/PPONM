@@ -2,12 +2,24 @@
 #include <stdlib.h>
 #include <math.h>
 #include <gsl/gsl_vector.h>
+#include <gsl/gsl_matrix.h>
+#include <assert.h>
+#include <string.h>
+
+typedef struct filename {char name[30];} fname;
+
+fname making_name(char * name){
+  fname info;
+  strcpy(info.name, name);
+  return info;
+}
 
 int driver(double* t, double b, double* h, gsl_vector* yt, double acc, double eps,
   void rkstep12(double t, double h, gsl_vector* yt,
     void f(double t, gsl_vector* y, gsl_vector* dydt),
   	gsl_vector* yth, gsl_vector* err),
-	void f(double t, gsl_vector* y, gsl_vector* dydt));
+	void f(double t, gsl_vector* y, gsl_vector* dydt),
+  fname* name);
 
 void sinus(double t, gsl_vector* y, gsl_vector* dydt) {
   gsl_vector_set(dydt,0, gsl_vector_get(y,1));
@@ -40,9 +52,8 @@ int main(int argc, char const *argv[]) {
   gsl_vector_set(yt, 0, 0); /*sin(0) = 0*/
   gsl_vector_set(yt, 1, 1); /*cos(0) = 1*/
 
-  int k = driver(&t, b, &h, yt, acc, eps, rkstep12, sinus);
-
-  printf("\n\n");
+  fname sin_name = making_name("sinus.out.txt");
+  int k = driver(&t, b, &h, yt, acc, eps, rkstep12, sinus, &sin_name);
 
   printf("Solving sine from 0 to %g\n", b);
   printf("Final value, y=%g dy/dx=%g\n", gsl_vector_get(yt,0),gsl_vector_get(yt,1));
@@ -66,9 +77,8 @@ int main(int argc, char const *argv[]) {
   /* start conditions */
   gsl_vector_set(yt2, 0, 7);
   gsl_vector_set(yt2, 1, -5);
-
-  int k2 = driver(&t, b, &h, yt2, acc, eps, rkstep12, function);
-  printf("\n\n");
+  fname func_name = making_name("function.out.txt");
+  int k2 = driver(&t, b, &h, yt2, acc, eps, rkstep12, function, &func_name);
   printf("Solving function from 0 to %g\n", b);
   printf("Final value, y=%g\n", gsl_vector_get(yt2,0));
   printf("Math values: x^2 - 5 x + 7 =%g\n",b*b-5*b+7);

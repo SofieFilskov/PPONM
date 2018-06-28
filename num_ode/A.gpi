@@ -3,5 +3,10 @@ set xlabel "x"
 set ylabel "y"
 set key right
 
+set output "sinus.svg"
+plot "sinus.out.txt" using 1:2 with lines title 'y(x)',\
+"sinus.out.txt" using 1:3 with lines title 'dy/dx',
+
 set output "function.svg"
-plot "A.out.txt" index 2 with points title 'f(x) = x^2 - 5x +7',
+plot "function.out.txt" using 1:2 with lines title 'y(x)',\
+"function.out.txt" using 1:3 with lines title 'dy/dx',
