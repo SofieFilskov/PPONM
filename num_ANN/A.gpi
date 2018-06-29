@@ -1,0 +1,6 @@
+set terminal svg enhanced background rgb 'white'
+set key right
+
+set output "A.svg"
+plot "A.out.txt" index 0 with circles title 'Function of few points',\
+"A.out.txt" index 1 with points title 'Interpolated fit',
