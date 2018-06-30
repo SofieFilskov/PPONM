@@ -2,4 +2,4 @@ I have chosen problem 8. Two-sided Jacobi algorithm for Singular Value Decomposi
 The output file is for a 2x2 matrix. For this it gets the right result. 
 We check if it is right by calculating the original matrix A from U D and VT. We also calculatet the eigenvalues for the matrices ATA and AAT, which is the same as the objects in the resulting D, squared, from the eigenvectors in V and U. We also check that V and U are orthogonal, as they should be.
 
-The code only produce a correct result for a 2x2 matrix. I have tried making the whole matrix symmetric with Givens before eliminating off-diagonal elemenets with Jacobi. This didn't solve the problem. The problem must be in the way A is updated, when doing Givens.
+The code only produce a correct result for a 2x2 matrix. I have tried making the whole matrix symmetric with Givens before eliminating off-diagonal elemenets with Jacobi, saving all the thetas in a matrix. This didn't solve the problem. The problem must be in the way A is updated, when doing Givens.
