@@ -1,0 +1,17 @@
+
+main: testing nvector_alloc 
+test passed
+
+main: testing nvector_set and nvector_get 
+the set value = 0.840188 
+the extracted v_i = 0.840188
+
+main: testing nvector_add
+a+b should = 1.71009
+a+b actually = 1.71009
+
+main: testing nvector_dot_product
+a * b = 3.44261
+
+main: testing nvector_equal
+test passed
