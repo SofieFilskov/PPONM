@@ -3,7 +3,7 @@ LDLIBS = $$(gsl-config --libs)
 
 .PHONEY: all clean
 
-all: A.svg
+all: A.svg B.out.txt
 
 A.svg: A.gpi A.out.txt
 	gnuplot $<
@@ -11,6 +11,10 @@ A.svg: A.gpi A.out.txt
 A.out.txt: A
 	./$< > $@
 A: A.c ann.c
+
+B.out.txt: B
+	./$< > $@
+B: B.c ann2D.c
 
 
 
