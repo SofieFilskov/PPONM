@@ -1,0 +1,52 @@
+1. FINDING MAXIMUM
+Using while my max is 2147483647
+The number max is 2147483647
+Using for my max is 2147483647
+The number max is 2147483647
+Using do my max is 2147483647
+The number max is 2147483647
+
+1. FINDING MINIMUM
+Using while my min is -2147483648
+The number min is -2147483648
+Using for my min is -2147483648
+The number min is -2147483648
+Using do my min is -2147483648
+The number min is -2147483648
+
+1. MACHINE EPSILON
+***Using while***
+For double my epsilon is = 2.22045e-16
+Double epsilon = 2.22045e-16
+For long double my epsilon is = 1.0842e-19
+Long double epsilon = 1.0842e-19
+For float my epsilon is  = 1.19209e-07
+Float epsilon = 1.19209e-07
+
+***Using for***
+For double my epsilon is = 2.22045e-16
+Double epsilon = 2.22045e-16
+For long double my epsilon is = 1.0842e-19
+Long double epsilon = 1.0842e-19
+For float my epsilon is  = 1.19209e-07
+Float epsilon = 1.19209e-07
+
+***Using do***
+For double my epsilon is = 2.22045e-16
+Double epsilon = 2.22045e-16
+For double my epsilon is = 0
+Double epsilon = 2.22045e-16
+For double my epsilon is = 1.19209e-07
+Double epsilon = 2.22045e-16
+
+2. ITERATION
+sum_up_float = 15.4037
+sum_down_float = 18.8079
+The difference must have something to do with rounding.
+It does converge, as it cannot handle so many decimals
+sum_up_double = 20.9662
+sum_down_double = 20.9662
+Double has more decimals and is therefore more precise
+
+3. EQUAL
+Smaller than tau, 1
