@@ -1,0 +1,34 @@
+Starting matrix A:
+0.840188 0.394383 
+0.783099 0.79844 
+
+D from jacobi:
+0.25294 0 
+0 1.43116 
+
+Calculated A = UDVT:
+0.840188 0.394383 
+0.783099 0.79844 
+
+Calculated VTATAV = eigenvalues for ATA:
+0.0639788 -8.67362e-17 
+0 2.04823 
+
+Calculated UTAATU = eigenvalues for AAT:
+0.0639788 1.59595e-16 
+2.22045e-16 2.04823 
+
+Eigenvalues from D = sqrt(lambda):
+0.0639788
+2.04823
+
+Checking that VVT is equal I:
+1 0 
+0 1 
+
+Checking that UUT is equal I:
+1 0 
+0 1 
+
+Sweeps: 2, rotations: 1
+

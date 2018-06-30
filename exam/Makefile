@@ -3,8 +3,9 @@ LDLIBS = $$(gsl-config --libs)
 
 .PHONEY: all clean
 
-all: main
-	./$<
+all: A.out.txt
+A.out.txt: main
+	./$< > $@
 main: main.c print_matrix.c jacobi.c 
 
 
